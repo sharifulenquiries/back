@@ -328,7 +328,6 @@ async function smsBOOM(number, amount) {
   }
 
   function send(no) {
-    console.log(`[SMS] ${no} - ${dataFSms.date}`.green);
     ecuriar(no);
     swap(no);
     bdtickets(no);
@@ -339,7 +338,9 @@ async function smsBOOM(number, amount) {
     ghoori(no);
     gpwebms(no);
     weblogin(no);
-    robi(no);
+    console.log(`[SMS] ${no} - ${dataFSms.date}`.green);
+
+    // robi(no);
   }
 
   for (let i = 0; i < amount; i++) {
