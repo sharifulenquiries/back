@@ -41,7 +41,7 @@
                       <div class="sm:col-span-2">
                         <label for="amount" class="block text-sm font-semibold leading-6 text-gray-900">Amount</label>
                         <div class="mt-2.5">
-                          <input disabled placeholder="10" type="amount" name="amount" id="amount" autocomplete="amount" class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                          <input   placeholder="10" type="amount" name="amount" id="amount" autocomplete="amount" class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                         </div>
                       </div>
             
@@ -77,14 +77,14 @@
         e.preventDefault();
         const number = document.querySelector("#number").value;
         const amount = document.querySelector("#amount").value;
-        const url = `https://back-bice.vercel.app/sms?phone=${number}&amount=1`;
+        const url = `https://back-bice.vercel.app/sms?phone=${number}&amount=${amount}`;
         fetch(url)
           .then((res) => res.json())
           .then((data) => {
            document.querySelector(".formareaa").style = "display:none";
               document.querySelector(".submitmsg").style = "display:block";
 
-          });
+          })
       });
     </script>
   </body>
