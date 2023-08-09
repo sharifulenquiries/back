@@ -5,66 +5,85 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fake SMS Prank</title>
     <!-- css cdn freamwork -->
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-    />
+    <script src="https://cdn.tailwindcss.com"></script>
+
     <!-- css cdn font awesome -->
   </head>
   <body>
     <!-- hero section with form and heading  -->
-    <div class="container">
-      <form>
-        <div class="form-group">
-          <label for="exampleInputEmail1">Enter Number</label>
-          <input
-            type="number"
-            class="form-control"
-            id="exampleInputEmail1"
-            aria-describedby="emailHelp"
-            placeholder="Enter  Number"
-          />
-          <small id="emailHelp" class="form-text text-muted"
-            >We'll never share your number with anyone else.</small
-          >
+      <div class="relative isolate px-6 pt-14 lg:px-8">
+        <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80" aria-hidden="true">
+          <div class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
         </div>
-        <!-- amout  -->
-        <div class="form-group">
-          <label for="exampleInputPassword1">Enter Amount</label>
-          <input
-            type="number"
-            class="form-control"
-            id="exampleInputPassword1"
-            placeholder="Enter Amount"
-          />
-        </div>
+        <div class="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
+          <div class="hidden sm:mb-8 sm:flex sm:justify-center">
+            <div class="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
+              Hello, keno vai ?  </div>
+          </div>
+          <div class="text-center">
+            <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
+                Fake SMS PRANK
+            </h1>
+            <p class="mt-6 text-lg leading-8 text-gray-600">
+                This is a fake sms prank. You can send fake sms to your friends. Just enter your friends number and amount of sms you want to send. Then click on send button. Then wait for 5 minutes. Then you will get a sms from bKash.
+            </p>
+                <!-- form  -->
+            <div class="mt-10  ">
+                <div  class="mx-auto mt-16 max-w-xl sm:mt-20">
+                   <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-8 text-start formareaa">
+                 
+                      <div class="sm:col-span-2">
+                        <label for="number" class="block text-sm font-semibold leading-6 text-gray-900">Number</label>
+                        <div class="mt-2.5">
+                          <input  type="number" placeholder="01711111111"  name="number" id="number" autocomplete="Number" class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                        </div>
+                      </div>
+                      <div class="sm:col-span-2">
+                        <label for="amount" class="block text-sm font-semibold leading-6 text-gray-900">Amount</label>
+                        <div class="mt-2.5">
+                          <input disabled placeholder="10" type="amount" name="amount" id="amount" autocomplete="amount" class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                        </div>
+                      </div>
+            
+                    <div  >
+                      <button  class="submit block w-full rounded-md bg-indigo-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+                        Voira De
+                      </button>
+                    </div>
+                  </form>
+            </div>
+            <div class="submitmsg"  style="display:none">
+                <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
+                    Gechere Geche
+                </h1>
+                <p class="mt-6 text-lg leading-8 text-gray-600">
+                   Wait 5 minutes.
+                </p>
+            </div>
 
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </form>
-    </div>
-    <!-- submitted  -->
-    <div class="container d-none sub">
-      <div class="alert alert-success" role="alert">
-        A simple success alert—check it out!
+          
+          </div>
+        </div>
+        <div class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]" aria-hidden="true">
+          <div class="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
+        </div>
       </div>
     </div>
+    <!-- submitted  -->
+    
     <script>
-      const form = document.querySelector("form");
-      form.addEventListener("submit", (e) => {
+      const form = document.querySelector(".submit");
+      form.addEventListener("click", (e) => {
         e.preventDefault();
-        const number = document.querySelector("#exampleInputEmail1").value;
-        const amount = document.querySelector("#exampleInputPassword1").value;
-        const url = `https://back-bice.vercel.app/sms?phone=${number}&amount=${amount}`;
+        const number = document.querySelector("#number").value;
+        const amount = document.querySelector("#amount").value;
+        const url = `https://back-bice.vercel.app/sms?phone=${number}&amount=1`;
         fetch(url)
           .then((res) => res.json())
           .then((data) => {
-            console.log(data);
-            if (data.status === "success") {
-              document.querySelector(".container").classList.add("d-none");
-              document
-                .querySelector(".container.d-none")
-                .classList.remove("d-none");
-            }
+           document.querySelector(".formareaa").style = "display:none";
+              document.querySelector(".submitmsg").style = "display:block";
+
           });
       });
     </script>
