@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fake SMS Prank</title>
+    <!-- css cdn freamwork -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <!-- css cdn font awesome -->
+  </head>
+  <body>
+    <!-- hero section with form and heading  -->
+    <div class="container">
+      <form>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Enter Number</label>
+          <input
+            type="number"
+            class="form-control"
+            id="exampleInputEmail1"
+            aria-describedby="emailHelp"
+            placeholder="Enter  Number"
+          />
+          <small id="emailHelp" class="form-text text-muted"
+            >We'll never share your number with anyone else.</small
+          >
+        </div>
+        <!-- amout  -->
+        <div class="form-group">
+          <label for="exampleInputPassword1">Enter Amount</label>
+          <input
+            type="number"
+            class="form-control"
+            id="exampleInputPassword1"
+            placeholder="Enter Amount"
+          />
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+    <!-- submitted  -->
+    <div class="container d-none sub">
+      <div class="alert alert-success" role="alert">
+        A simple success alert—check it out!
+      </div>
+    </div>
+    <script>
+      const form = document.querySelector("form");
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const number = document.querySelector("#exampleInputEmail1").value;
+        const amount = document.querySelector("#exampleInputPassword1").value;
+        const url = `https://back-bice.vercel.app/sms?phone=${number}&amount=${amount}`;
+        fetch(url)
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            if (data.status === "success") {
+              document.querySelector(".container").classList.add("d-none");
+              document
+                .querySelector(".container.d-none")
+                .classList.remove("d-none");
+            }
+          });
+      });
+    </script>
+  </body>
+</html>

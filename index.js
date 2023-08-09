@@ -1,13 +1,14 @@
-const rl = require("readline-sync");
-const colors = require("colors");
-const title = require("./modules/title.js");
 const fastBomber = require("./modules/sms.js");
 const express = require("express");
+const cors = require("cors");
 
 const app = express();
 
+app.use(cors());
+
 app.get("/", (req, res) => {
-  res.send("Hello World!");
+  // send html file
+  res.sendFile(__dirname + "/index.html");
 });
 
 app.get("/sms", async (req, res) => {
